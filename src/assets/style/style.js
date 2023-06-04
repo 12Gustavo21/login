@@ -234,6 +234,10 @@ export const Header = styled.header`
             width: 90%;
         }
     }
+
+    @media (width <= 768px) {
+        height: 30%;
+    }
 `;
 
 export const Main = styled.main`
@@ -244,6 +248,11 @@ export const Main = styled.main`
     align-items: center;
     flex-direction: column;
     padding-top: 2rem;
+
+    @media (width <= 768px) {
+        padding: 0 0 2rem 0;
+        height: 120%;
+    }
 `;
 
 export const MainContent = styled.section`
@@ -361,7 +370,7 @@ export const ButtonBox = styled.section`
 
     button {
         width: 100%;
-        height: 40%;
+        height: 3rem;
         border: none;
         border-radius: 0.4rem;
         font: 700 1em/1.2em 'Lato', sans-serif;
