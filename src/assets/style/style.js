@@ -216,7 +216,6 @@ export const Header = styled.header`
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
     }
 
     p {
@@ -236,7 +235,8 @@ export const Header = styled.header`
     }
 
     @media (width <= 768px) {
-        height: 30%;
+        justify-content: flex-start;
+        padding: 2rem 0;
     }
 `;
 
@@ -251,7 +251,7 @@ export const Main = styled.main`
 
     @media (width <= 768px) {
         padding: 0 0 2rem 0;
-        height: 120%;
+        height: 150%;
     }
 `;
 
@@ -270,6 +270,10 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media (width <= 768px) {
+        gap: 0;
+    }
 `;
 
 export const InputBox = styled.div`
@@ -296,11 +300,18 @@ export const InputBox = styled.div`
     div input {
         width: 100%;
         height: 60%;
+        max-height: 4rem;
         border: 0.05rem solid #E8E8E8;
         border-radius: 0.4rem;
         font: 400 0.9em/1em 'Merriweather', sans-serif;
         color: #1A202C;
         padding-left: 1rem;
+    }
+
+    @media (width <= 768px) {
+        div {
+            height: 40%;
+        }
     }
 `;
 
@@ -381,6 +392,12 @@ export const ButtonBox = styled.section`
         align-items: center;
         text-shadow: 0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.25);
     }
+
+    @media (width <= 768px) {
+        height: 20%;
+        justify-content: center;
+        gap: 1rem;
+    }
 `;
 
 export const EnterButton = styled.button`
@@ -423,5 +440,10 @@ export const Footer = styled.footer`
     a {
         color: #2B6CB0;
         text-decoration: none;
+    }
+
+    @media (width <= 768px) {
+        height: 100%;
+        align-items: center;
     }
 `;
