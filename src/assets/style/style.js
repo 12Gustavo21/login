@@ -10,7 +10,7 @@ export const Content = styled.section`
 
 export const IlustrationAside = styled.aside`
     width: 50%;
-    height: 100%;
+    height: 100vh;
     background-color: #F7FAFC;
     display: grid;
     place-items: center;
@@ -194,7 +194,7 @@ export const Person = styled.div`
 
 export const MainAside = styled.aside`
     width: 50%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     place-items: center;
 
