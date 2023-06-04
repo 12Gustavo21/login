@@ -10,4 +10,13 @@ export const GlobalStyle = createGlobalStyle`
     html {
         scroll-behavior: smooth;
     }
+
+    ::selection {
+        background-color: #04C35C;
+        color: #fff;
+    }
+
+    body {
+        overflow: hidden;
+    }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 //Images
 import personOne from "./assets/img/person-one.svg";
@@ -12,6 +12,10 @@ import GoogleIcon from "./assets/img/google-icon.svg";
 //Styles
 import { GlobalStyle } from "./assets/global/style";
 import * as S from "./assets/style/style";
+
+//Aos library
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function App() {
   const gallery = [
@@ -47,11 +51,18 @@ export default function App() {
     },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      once: true
+    });
+  }, []);
+
   return (
-    <S.Body>
+    <>
       <GlobalStyle />
+      <S.Content>
       <S.IlustrationAside>
-        <S.IlustrationContent>
+        <S.IlustrationContent data-aos="fade-right" data-aos-duration="2000">
           <S.IlustrationHeader>
             <S.Dots>
               <span></span>
@@ -91,21 +102,27 @@ export default function App() {
         </S.IlustrationContent>
       </S.IlustrationAside>
       <S.MainAside>
-        <header>
+        <S.Header data-aos="fade-left" data-aos-duration="2750">
           <section>
-            <p>Bem vindo de volta</p>
+            <p>Bem-vindo de volta</p>
           </section>
           <section>
             <h1>Faça login na sua conta</h1>
           </section>
-        </header>
-        <main>
-          <section>
-            <form>
-              <section>
+        </S.Header>
+        <S.Main data-aos="fade-left" data-aos-duration="2500">
+          <S.MainContent>
+            <S.Form>
+              <S.InputBox data-aos="fade-left" data-aos-duration="2750">
                 <div>
                   <label htmlFor="email">Email</label>
-                  <input type="email" name="email" id="email" required />
+                  <input 
+                  type="email" 
+                  name="email" 
+                  id="email" 
+                  placeholder="Seu melhor email..." 
+                  autoComplete="true"
+                  required />
                 </div>
                 <div>
                   <label htmlFor="password">Senha</label>
@@ -113,39 +130,40 @@ export default function App() {
                     type="password"
                     name="password"
                     id="password"
+                    placeholder="Sua senha..."
+                    autoComplete="true"
                     required
                   />
                 </div>
-              </section>
-              <section>
-                <section>
-                  <div>
-                    <input type="checkbox" name="remember" id="remember" />
-                    <label htmlFor="remember">Lembre de mim</label>
-                  </div>
-                  <div>
-                    <a href="/">Esqueceu sua senha?</a>
-                  </div>
-                </section>
-              </section>
-              <section>
-                <button type="submit">Entrar</button>
-                <button>
+              </S.InputBox>
+              <S.RememberContainer data-aos="fade-left" data-aos-duration="2800">
+                  <S.Remember>
+                    <S.RadioBox>
+                      <input type="radio" name="remember" id="remember" />
+                      <label htmlFor="remember">Lembre de mim</label>
+                    </S.RadioBox>
+                    <S.ForgetPassword>
+                      <a href="/">Esqueceu sua senha?</a>
+                    </S.ForgetPassword>
+                  </S.Remember>
+              </S.RememberContainer>
+              <S.ButtonBox>
+                <S.EnterButton type="submit" data-aos="fade-left" data-aos-duration="2700">Entrar</S.EnterButton>
+                <S.GoogleButton data-aos="fade-left" data-aos-duration="2900">
                   <img src={GoogleIcon} alt="Google Icon" /> Ou faça login com o
                   Google
-                </button>
-              </section>
-            </form>
-          </section>
-        </main>
-        <footer>
-          <section>
+                </S.GoogleButton>
+              </S.ButtonBox>
+            </S.Form>
+          </S.MainContent>
+        </S.Main>
+        <S.Footer data-aos="fade-left" data-aos-duration="3000">
             <p>
               Não tem uma conta? <a href="/">Cadastre-se</a>
             </p>
-          </section>
-        </footer>
+        </S.Footer>
       </S.MainAside>
-    </S.Body>
+      </S.Content>
+    </>
   );
 }
