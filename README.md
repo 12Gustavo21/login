@@ -14,10 +14,10 @@
 
 ### How to use
  
- - git clone https://github.com/12Gustavo21/login
- - npm install
- - code .
- - npm start
+- git clone https://github.com/12Gustavo21/Jazz-School.git or download the zip
+- npm install or yarn install
+- code . (if you use VSCode)
+- npm start or yarn start
  
  ## 💻 Online Page: https://login-12gustavo21.vercel.app
 
