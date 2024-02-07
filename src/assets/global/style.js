@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ::selection {
-        background-color: #04C35C;
+        background-color: #1e9e6a;
         color: #fff;
     }
 `;

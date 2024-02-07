@@ -74,14 +74,7 @@ export default function App() {
             <S.Persons>
               <S.PersonBox>
                 <S.Person>
-                  {gallery.slice(0, 3).map((item) => (
-                    <figure key={item.id}>
-                      <img src={item.img} alt={item.alt} draggable="false" />
-                    </figure>
-                  ))}
-                </S.Person>
-                <S.Person>
-                  {gallery.slice(3, 6).map((item) => (
+                  {gallery.map((item) => (
                     <figure key={item.id}>
                       <img src={item.img} alt={item.alt} draggable="false" />
                     </figure>
@@ -139,7 +132,7 @@ export default function App() {
                   </S.Remember>
                 </S.RememberContainer>
                 <S.ButtonBox>
-                  <S.EnterButton type="submit">Entrar</S.EnterButton>
+                  <S.EnterButton type="submit">Entrar na conta</S.EnterButton>
                   <S.GoogleButton>
                     <img src={GoogleIcon} alt="Google Icon" /> Ou faça login com
                     o Google
